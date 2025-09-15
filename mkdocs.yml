@@ -1,0 +1,90 @@
+site_name: Digital Trust Handbook
+site_description: 実務エンジニアのための 暗号/署名/PKI/タイムスタンプ/認証・認可 のハンドブック
+site_author: shuji-bonji
+repo_url: https://github.com/shuji-bonji/digital-trust-handbook
+repo_name: shuji-bonji/digital-trust-handbook
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  language: ja
+  features:
+    - navigation.tabs
+    - navigation.top
+    - navigation.sections
+    - navigation.instant
+    - content.code.copy
+    - content.action.edit
+    - search.suggest
+    - search.highlight
+    - toc.follow
+  palette:
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+
+plugins:
+  - search:
+      lang: ja
+      separator: '[\s\-、。．，,.]+'
+  - git-revision-date-localized:
+      type: date
+      enable_creation_date: true
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.critic
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.tabbed:
+      alternate_style: true
+  - attr_list
+  - footnotes
+  - toc:
+      permalink: true
+  # Mermaid（Material 9系はsuperfencesでOK）
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+
+nav:
+  - 概要: index.md
+  - 基礎:
+    - 00-foundations/crypto-basics.md
+    - 00-foundations/public-key-crypto.md
+    - 00-foundations/hash-and-mac.md
+  - PKIと証明書:
+    - 10-pki-and-cert/pki-overview.md
+    - 10-pki-and-cert/certificates-x509.md
+    - 10-pki-and-cert/ocsp-crl-validity.md
+  - 署名:
+    - 20-signatures/digital-signatures-overview.md
+    - 20-signatures/document-signing-pades.md
+    - 20-signatures/data-stream-signing.md
+    - 20-signatures/long-term-signatures.md
+  - タイムスタンプ:
+    - 30-timestamp/tsa-basics.md
+    - 30-timestamp/rfc3161-and-extensions.md
+  - 認証と認可:
+    - 40-authn-authz/authn-vs-authz.md
+    - 40-authn-authz/oauth2-oidc-basics.md
+    - 40-authn-authz/tokens-jwt-jws-jwe.md
+  - IoTとデータ完全性:
+    - 50-iot-and-data-integrity/sensor-data-integrity.md
+    - 50-iot-and-data-integrity/telemetry-signing.md
+    - 50-iot-and-data-integrity/secure-transport-tls-mtls.md
+  - 標準とプロファイル:
+    - 60-standards-and-profiles/iso-32000-2-pades.md
+    - 60-standards-and-profiles/etsi-en-319-xxx.md
+    - 60-standards-and-profiles/web-pki-basics-ca-browser.md
+  - 実務ノート:
+    - 70-practical/reference-impls-and-tools.md
+    - 70-practical/cli-snippets-openssl.md
+    - 70-practical/faq-and-troubleshooting.md
+  - 付録:
+    - 90-appendix/glossary.md
+    - 90-appendix/further-reading.md
